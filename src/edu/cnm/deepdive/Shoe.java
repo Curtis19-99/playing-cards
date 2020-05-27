@@ -21,8 +21,12 @@ public class Shoe {
   }
 
   public void shuffle(Random rng) {
-    // TODO Implement shuffle.
-
+    for (int targetIndex = cards.length - 1; targetIndex > 0; targetIndex--) {
+      int sourceIndex = rng.nextInt(targetIndex + 1);
+      Card temp = cards[targetIndex];
+      cards[targetIndex] = cards[sourceIndex];
+      cards[sourceIndex] = temp;
+    }
   }
 
 }
